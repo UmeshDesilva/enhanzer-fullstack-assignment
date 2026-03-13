@@ -1,0 +1,13 @@
+# Book Management System
+
+## How to Run
+### Backend (ASP.NET)
+1. Navigate to `BookApi` folder.
+2. Run `dotnet run` or open in Visual Studio and press F5.
+3. API runs on: `https://localhost:7103` (Update your Angular service if different).
+
+### Frontend (Angular)
+1. Navigate to `book-management` folder.
+2. Run `npm install`.
+3. Run `ng serve`.
+4. Open browser at `http://localhost:4200`.
