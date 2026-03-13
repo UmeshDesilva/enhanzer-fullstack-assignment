@@ -1,0 +1,37 @@
+<div style="padding: 20px; font-family: sans-serif;">
+  <h1>Book Manager</h1>
+
+  <div style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd;">
+    <h3>{{ isEdit ? 'Edit Book' : 'Add New Book' }}</h3>
+    <input [(ngModel)]="book.title" placeholder="Title"><br><br>
+    <input [(ngModel)]="book.author" placeholder="Author"><br><br>
+    <input [(ngModel)]="book.isbn" placeholder="ISBN"><br><br>
+    <input type="date" [(ngModel)]="book.publicationDate"><br><br>
+    <button (click)="saveBook()">{{ isEdit ? 'Update' : 'Save' }}</button>
+    <button (click)="clearForm()" *ngIf="isEdit">Cancel</button>
+  </div>
+
+  <table border="1" style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th>Title</th>
+        <th>Author</th>
+        <th>ISBN</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of books">
+        <td>{{ b.title }}</td>
+        <td>{{ b.author }}</td>
+        <td>{{ b.isbn }}</td>
+        <td>{{ b.publicationDate | date }}</td>
+        <td>
+          <button (click)="editBook(b)">Edit</button>
+          <button (click)="deleteBook(b.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
